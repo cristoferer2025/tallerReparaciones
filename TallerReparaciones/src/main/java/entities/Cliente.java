@@ -1,8 +1,7 @@
-package entitities;
+package entities;
 
 import java.util.Scanner;
 
-import dwes.maven.mysql.Persona;
 
 public class Cliente {
 	private int id_cliente;
@@ -77,7 +76,7 @@ public class Cliente {
 		return new Cliente(id_cliente, nombre, email);
 	}
 
-	public static void mostrarPersona(Cliente c) {
+	public static void mostrarCliente(Cliente c) {
 		System.out.println("--------- Cliente ---------");
 		System.out.println("> Cliente id_cliente:" + c.getId_cliente());
 		System.out.println("> Dame nombre:" + c.getNombre());

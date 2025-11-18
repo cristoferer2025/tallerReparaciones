@@ -1,4 +1,4 @@
-package entitities;
+package entities;
 
 import java.sql.Date;
 import java.util.Scanner;
@@ -127,13 +127,6 @@ public class Reparacion {
 	
 	
 	
-	private int idreparacion;
-	private String matricula;
-	private Date fecha_entrada;
-	private double coste_estimado;
-	private int estado;
-	private int vehiculo_id;
-	private int usuario_id;
 	
 	
 	
@@ -149,22 +142,40 @@ public class Reparacion {
 		System.out.println("> Dame matricula:");
 		String matricula = sc.nextLine();
 
-		System.out.println("> Dame email:");
-		String email = sc.nextLine();
+
+		
+		System.out.println("> Dame fecha_entrada:");
+		int fecha_entrada = sc.nextInt();
 		sc.nextLine();
 
-		System.out.println("Dame fecha de entrada");
+		System.out.println("> Dame coste_estimado:");
+		String coste_estimado = sc.nextLine();
 
-		sc.close();
+		System.out.println("> Dame estado:");
+		String estado = sc.nextLine();
+		sc.nextLine();
+		
+		System.out.println("> Dame vehiculo_id:");
+		int vehiculo_id = sc.nextInt();
+		sc.nextLine();
 
-		return new Cliente(id_cliente, nombre, email);
+		System.out.println("> Dame usuario_id:");
+		String usuario_id = sc.nextLine();
+
+		
+
+		return new Reparacion(idreparacion, matricula, fecha_entrada, coste_estimado,estado, vehiculo_id, usuario_id);
 	}
 
-	public static void mostrarPersona(Cliente c) {
-		System.out.println("--------- Cliente ---------");
-		System.out.println("> Cliente id_cliente:" + c.getId_cliente());
-		System.out.println("> Dame nombre:" + c.getNombre());
-		System.out.println("> Dame email:" + c.getEmail());
+	public static void mostarReparacion(Reparacion r) {
+		System.out.println("--------- Reparacion ---------");
+		System.out.println("> idreparacion:" + r.getIdreparacion());
+		System.out.println("> Dame matricula:" + r.getMatricula());
+		System.out.println("> Dame fecha_entrada:" + r.getFecha_entrada());
+		System.out.println("> Dame coste_estimado:" + r.getCoste_estimado());
+		System.out.println("> Dame matricula:" + r.getVehiculo_id());
+		System.out.println("> Dame fecha_entrada:" + r.getUsuario_id());
+		
 		
 	}
 }

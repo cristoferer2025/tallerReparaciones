@@ -1,6 +1,41 @@
 package dao.mysql;
 
-public class ClienteDAOMySQL {
+import java.util.ArrayList;
+
+import dao.interfaces.ClienteDAO;
+import entities.Cliente;
+
+public class ClienteDAOMySQL implements ClienteDAO {
+
+	@Override
+	public int insert(Cliente c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Cliente c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(String dni) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ArrayList<dao.interfaces.Cliente> findall() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public dao.interfaces.Cliente findByDni(String dni) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }
