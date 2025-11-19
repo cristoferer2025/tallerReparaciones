@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Scanner;
+
 public class Vehiculo {
 	private int idvehiculo;
 	private String matricula;
@@ -90,6 +92,46 @@ public class Vehiculo {
 
 	public void setCliente_id(int cliente_id) {
 		this.cliente_id = cliente_id;
+	}
+	
+	
+	public static Usuario leerVehiculo() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("> Dame idvehiculo:");
+		int idvehiculo = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.println("> Dame matricula:");
+		String matricula = sc.nextLine();
+		sc.nextLine();
+
+		System.out.println("> Dame marca:");
+		String marca = sc.nextLine();
+
+		System.out.println("> Dame modelo:");
+		String modelo = sc.nextLine();
+		sc.nextLine();
+		
+		System.out.println("> Dame cliente_id:");
+		String cliente_id = sc.nextLine();
+		sc.nextLine();
+
+		System.out.println("Dame fecha de entrada");
+
+		sc.close();
+
+		return new Usuario(idvehiculo, matricula, marca, modelo);
+	}
+
+	public static void mostrarUsuario(Vehiculo v) {
+		System.out.println("--------- idvehiculo ---------");
+		System.out.println("> Vehiculo idvehiculo:" + v.getIdvehiculo());
+		System.out.println("> Dame matricula:" + v.getMatricula());
+		System.out.println("> Dame marca:" + v.getMarca());
+		System.out.println("> Dame modelo:" + v.getModelo());
+		System.out.println("> Dame cliente_id:" + v.getCliente_id());
+		
 	}
 
 }

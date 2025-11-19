@@ -5,21 +5,21 @@ import java.util.Scanner;
 
 public class Reparacion {
 	private int idreparacion;
-	private String matricula;
+	private String descripcion;
 	private Date fecha_entrada;
 	private double coste_estimado;
-	private int estado;
+	private String  estado;
 	private int vehiculo_id;
 	private int usuario_id;
 	
 	
 
 
-	public Reparacion(int idreparacion, String matricula, Date fecha_entrada, double coste_estimado, int estado,
+	public Reparacion(int idreparacion, String matricula, Date fecha_entrada, double coste_estimado, String estado,
 			int vehiculo_id, int usuario_id) {
 		super();
 		this.idreparacion = idreparacion;
-		this.matricula = matricula;
+		this.descripcion = matricula;
 		this.fecha_entrada = fecha_entrada;
 		this.coste_estimado = coste_estimado;
 		this.estado = estado;
@@ -44,15 +44,15 @@ public class Reparacion {
 
 
 
-	public String getMatricula() {
-		return matricula;
+	public String getdescripcion() {
+		return descripcion;
 	}
 
 
 
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setdescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 
@@ -86,14 +86,14 @@ public class Reparacion {
 
 
 
-	public int getEstado() {
+	public String getEstado() {
 		return estado;
 	}
 
 
 
 
-	public void setEstado(int estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
@@ -135,12 +135,13 @@ public class Reparacion {
 	public static Reparacion leerReparacion() {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("> Dame id:");
+		System.out.println("> Dame idreparacion:");
 		int idreparacion = sc.nextInt();
 		sc.nextLine();
 
-		System.out.println("> Dame matricula:");
-		String matricula = sc.nextLine();
+
+		System.out.println("> Dame descripcion:");
+		String descripcion = sc.nextLine();
 
 
 		
@@ -160,21 +161,23 @@ public class Reparacion {
 		sc.nextLine();
 
 		System.out.println("> Dame usuario_id:");
-		String usuario_id = sc.nextLine();
-
+		int usuario_id = sc.nextInt();
+		sc.nextLine();
 		
 
-		return new Reparacion(idreparacion, matricula, fecha_entrada, coste_estimado,estado, vehiculo_id, usuario_id);
+		return new Reparacion(idreparacion, descripcion, fecha_entrada, coste_estimado,estado, vehiculo_id, usuario_id);
 	}
 
 	public static void mostarReparacion(Reparacion r) {
 		System.out.println("--------- Reparacion ---------");
 		System.out.println("> idreparacion:" + r.getIdreparacion());
-		System.out.println("> Dame matricula:" + r.getMatricula());
+		System.out.println("> Dame descripcion:" + r.getdescripcion());
 		System.out.println("> Dame fecha_entrada:" + r.getFecha_entrada());
 		System.out.println("> Dame coste_estimado:" + r.getCoste_estimado());
-		System.out.println("> Dame matricula:" + r.getVehiculo_id());
+		System.out.println("> Dame estado:" + r.getEstado());
+		System.out.println("> Dame vehiculo_id:" + r.getVehiculo_id());
 		System.out.println("> Dame fecha_entrada:" + r.getUsuario_id());
+	
 		
 		
 	}

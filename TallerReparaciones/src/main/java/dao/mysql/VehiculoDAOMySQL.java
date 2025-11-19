@@ -1,6 +1,7 @@
 package dao.mysql;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.util.ArrayList;
 
 import dao.interfaces.VehiculoDAO;
@@ -23,7 +24,7 @@ public class VehiculoDAOMySQL implements VehiculoDAO {
 	}
 
 	@Override
-	public int delete(String dni) {
+	public boolean delete(String dni) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -33,6 +34,7 @@ public class VehiculoDAOMySQL implements VehiculoDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public List<Reparacion>
 
 	@Override
 	public dao.interfaces.Vehiculo findByDni(String dni) {

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Usuario {
 	private int idusuario;
+	private String dni;
 	private String nombreusuario;
 	private String password;
     private String rol;
@@ -23,6 +24,14 @@ public class Usuario {
 	}
 	public void setIdusuario(int idusuario) {
 		this.idusuario = idusuario;
+	}
+	public String getDni() {
+		return dni;
+	}
+		
+	public void setDni(String dni) {
+		this.dni = dni;
+	
 	}
 	public String getNombreusuario() {
 		return nombreusuario;
@@ -52,6 +61,10 @@ public class Usuario {
 		System.out.println("> Dame idusuario:");
 		int idusuario = sc.nextInt();
 		sc.nextLine();
+		
+		System.out.println("> Dame dni:");
+		String dni = sc.nextLine();
+		sc.nextLine();
 
 		System.out.println("> Dame nombreusuario:");
 		String nombreusuario = sc.nextLine();
@@ -74,6 +87,7 @@ public class Usuario {
 	public static void mostrarUsuario(Usuario u) {
 		System.out.println("--------- Cliente ---------");
 		System.out.println("> Cliente idusuario:" + u.getIdusuario());
+		System.out.println("> Dame dni:" + u.getDni());
 		System.out.println("> Dame nombreusuario:" + u.getIdusuario());
 		System.out.println("> Dame password:" + u.getPassword());
 		System.out.println("> Dame rol:" + u.getRol());
